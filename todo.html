@@ -11,7 +11,10 @@
         };
         
         var todoApp = angular.module("todoApp", []);
-		
+        
+		<!--run function is inherited from angular.module-->
+		<!--this run method is an example of dependency injection - $http-->
+		<!--the get expects the json file at the context root-->
 		todoApp.run(function ($http) {
 			$http.get("todo.json").success(function (data) {
 				model.items = data;
